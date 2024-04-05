@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EvaDiagonalArrowRightUpFill from '~icons/eva/diagonal-arrow-right-up-fill';
+---
+
+<Layout title="Welcome to Astro.">
+	<nav class="flex w-full justify-between">
+		<button>
+			<img src="public/logo.svg" class="w-[117px] h-[36px]" />
+		</button>
+		<button class="flex gap-2 justify-between items-center">
+			<span class="t-d-md f-display">Reach Out</span>
+			<EvaDiagonalArrowRightUpFill class="w-14 h-14" />
+		</button>
+	</nav>
+	<main class="w-full h-full"></main>
+</Layout>

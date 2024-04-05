@@ -1,0 +1,57 @@
+---
+const indigo1k = '#15132A';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://use.typekit.net/rbu2ifw.css" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Matthew Van Doff: Full-Stack Developer</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global define:vars={{ indigo1k }}>
+	html {
+		font-family: cursive;
+		background: var(--indigo1k);
+		background-size: 224px;
+		color: white;
+		height: 100%;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+	body {
+		height: 100%;
+		padding: 48px;
+	}
+	.f-display {
+		font-family: neue-haas-grotesk-display, sans-serif;
+		font-weight: 600;
+		font-style: normal;
+	}
+	.f-body {
+		font-family: neue-haas-unica, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+	.t-d-lg {
+		font-size: 58px;
+	}
+	.t-d-md {
+		font-size: 38px;
+	}
+	.t-d-body {
+		font-size: 22px;
+	}
+	.t-d-sm {
+		font-size: 16px;
+	}
+</style>
