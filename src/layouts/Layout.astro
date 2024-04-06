@@ -14,7 +14,9 @@ const bg = '#15132A';
 		<title>Matthew Van Doff: Full-Stack Developer</title>
 	</head>
 	<body>
-		<slot />
+		<div class="content-wrapper">
+			<slot />
+		</div>
 	</body>
 	<style is:global define:vars={{ bg }}>
 		html,
@@ -25,6 +27,7 @@ const bg = '#15132A';
 			height: 100%;
 			overflow-x: hidden;
 		}
+
 		html {
 			font-family: cursive;
 			background: var(--bg);
@@ -34,7 +37,7 @@ const bg = '#15132A';
 			text-rendering: optimizeLegibility;
 		}
 
-		body {
+		.content-wrapper {
 			@media screen and (min-width: 768px) {
 				padding: 48px;
 			}
@@ -43,12 +46,13 @@ const bg = '#15132A';
 			}
 		}
 
-		body,
+		.content-wrapper,
 		.nav {
 			max-width: 1600px;
 			margin: 0 auto;
 		}
-		body,
+
+		.content-wrapper,
 		.nav {
 			max-width: 1600px;
 			margin: 0 auto;
@@ -98,6 +102,43 @@ const bg = '#15132A';
 			@media screen and (max-width: 768px) {
 				font-size: 12px;
 			}
+		}
+		/* Scrollbar styles */
+		body {
+			scrollbar-width: thin;
+			scrollbar-color: #312e81 transparent;
+		}
+
+		::-webkit-scrollbar {
+			width: 12px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: transparent;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #1e1b4b;
+			border-radius: 6px;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #312e81;
+		}
+
+		/* Auto-hide scrollbar when inactive */
+		::-webkit-scrollbar-thumb:vertical:hover,
+		::-webkit-scrollbar-thumb:vertical:active {
+			visibility: visible;
+		}
+
+		::-webkit-scrollbar-thumb:vertical {
+			visibility: hidden;
+		}
+
+		/* Hide scrollbar track when inactive */
+		::-webkit-scrollbar-track-piece {
+			background: transparent;
 		}
 	</style>
 </html>
