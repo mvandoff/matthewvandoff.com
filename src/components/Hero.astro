@@ -1,0 +1,49 @@
+---
+import NameBar from './NameBar.astro';
+---
+
+<div>
+	<NameBar />
+	<section class="h-[1000px]">
+		<p class="t-d-lg f-display w-[630px] mx-auto text-right pt-16">
+			<span class="text-indigo-300">I am</span>
+			a full-stack software engineer building
+			<span class="text-indigo-300">user focused</span> digital solutions that
+			<span class="italic text-indigo-300">feel good.</span>
+		</p>
+	</section>
+
+	<section class="relative">
+		<div class="img-container rounded-lg">
+			<img src="public/images/me.webp" alt="portrait" class="rounded-lg" />
+		</div>
+		<p class="w-[574px] t-d-md f-display absolute left-[40%] top-72 leading-relaxed">
+			Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North
+			Carolina, USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript,
+			React, .NET, and Node.js.
+		</p>
+	</section>
+</div>
+
+<style>
+	.img-container {
+		background: black;
+		width: 375px;
+		translate: -50%;
+		margin: 0 auto;
+	}
+
+	.img-container::before {
+		content: '';
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		background: linear-gradient(0deg, var(--bg) 0%, rgba(0, 0, 0, 0) 200%);
+	}
+
+	img {
+		/* object-fit: cover; */
+	}
+</style>
