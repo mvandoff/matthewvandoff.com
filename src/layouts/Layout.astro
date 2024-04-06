@@ -6,8 +6,8 @@ const bg = '#15132A';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Porfolio and landing page of full-stack developer, Matthew Van Doff." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="https://use.typekit.net/rbu2ifw.css" />
 		<meta name="generator" content={Astro.generator} />
@@ -17,19 +17,36 @@ const bg = '#15132A';
 		<slot />
 	</body>
 	<style is:global define:vars={{ bg }}>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			overflow-x: hidden;
+		}
 		html {
 			font-family: cursive;
 			background: var(--bg);
-			/* background-size: 224px; */
 			color: white;
-			height: 100%;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			text-rendering: optimizeLegibility;
 		}
+
 		body {
-			height: 100%;
-			padding: 48px;
+			@media screen and (min-width: 768px) {
+				padding: 48px;
+			}
+			@media screen and (max-width: 768px) {
+				padding: 32px;
+			}
+		}
+
+		body,
+		.nav {
+			max-width: 1600px;
+			margin: 0 auto;
 		}
 		body,
 		.nav {
@@ -46,17 +63,41 @@ const bg = '#15132A';
 			font-weight: 400;
 			font-style: normal;
 		}
-		.t-d-lg {
-			font-size: 58px;
+		.t-lg {
+			@media screen and (min-width: 1024px) {
+				font-size: 58px;
+			}
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				font-size: 42px;
+			}
+			@media screen and (max-width: 768px) {
+				font-size: 32px;
+			}
 		}
-		.t-d-md {
-			font-size: 38px;
+		.t-md {
+			@media screen and (min-width: 1024px) {
+				font-size: 42px;
+			}
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				font-size: 26px;
+			}
+			@media screen and (max-width: 768px) {
+				font-size: 20px;
+			}
 		}
 		.t-d-body {
 			font-size: 22px;
 		}
-		.t-d-sm {
-			font-size: 16px;
+		.t-sm {
+			@media screen and (min-width: 1024px) {
+				font-size: 16px;
+			}
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				font-size: 14px;
+			}
+			@media screen and (max-width: 768px) {
+				font-size: 12px;
+			}
 		}
 	</style>
 </html>

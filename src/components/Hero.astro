@@ -5,8 +5,8 @@ import me from '../assets/images/me.webp';
 ---
 
 <NameBar />
-<section class="h-[1000px]">
-	<p class="t-d-lg f-display w-[630px] mx-auto text-right pt-16">
+<section class="h-[1000px] w-full">
+	<p class="t-lg f-display w-[241px] md:w-[468px] lg:w-[630px] mx-auto text-right pt-16">
 		<span class="text-indigo-300">I am</span>
 		a full-stack software engineer building
 		<span class="text-indigo-300">user focused</span> digital solutions that
@@ -18,7 +18,7 @@ import me from '../assets/images/me.webp';
 	<div class="img-container rounded-lg">
 		<Image src={me} alt="portrait" class="rounded-lg" loading="eager" />
 	</div>
-	<p class="w-[574px] t-d-md f-display absolute left-[40%] top-72 leading-relaxed">
+	<p class="w-[574px] t-md f-display absolute left-[40%] top-72 leading-relaxed">
 		Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North
 		Carolina, USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript,
 		React, .NET, and Node.js.
@@ -40,7 +40,7 @@ import me from '../assets/images/me.webp';
 		height: 100%;
 		display: block;
 		position: absolute;
-		background: linear-gradient(0deg, var(--bg) 0%, rgba(0, 0, 0, 0) 200%);
+		background: linear-gradient(0deg, var(--bg) 0%, rgba(0, 0, 0, 0) 150%);
 	}
 
 	img {
