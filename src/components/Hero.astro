@@ -1,29 +1,29 @@
 ---
+import { Image } from 'astro:assets';
 import NameBar from './NameBar.astro';
+import me from '../assets/images/me.webp';
 ---
 
-<div>
-	<NameBar />
-	<section class="h-[1000px]">
-		<p class="t-d-lg f-display w-[630px] mx-auto text-right pt-16">
-			<span class="text-indigo-300">I am</span>
-			a full-stack software engineer building
-			<span class="text-indigo-300">user focused</span> digital solutions that
-			<span class="italic text-indigo-300">feel good.</span>
-		</p>
-	</section>
+<NameBar />
+<section class="h-[1000px]">
+	<p class="t-d-lg f-display w-[630px] mx-auto text-right pt-16">
+		<span class="text-indigo-300">I am</span>
+		a full-stack software engineer building
+		<span class="text-indigo-300">user focused</span> digital solutions that
+		<span class="italic text-indigo-300">feel good.</span>
+	</p>
+</section>
 
-	<section class="relative">
-		<div class="img-container rounded-lg">
-			<img src="public/images/me.webp" alt="portrait" class="rounded-lg" />
-		</div>
-		<p class="w-[574px] t-d-md f-display absolute left-[40%] top-72 leading-relaxed">
-			Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North
-			Carolina, USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript,
-			React, .NET, and Node.js.
-		</p>
-	</section>
-</div>
+<section class="relative">
+	<div class="img-container rounded-lg">
+		<Image src={me} alt="portrait" class="rounded-lg" loading="eager" />
+	</div>
+	<p class="w-[574px] t-d-md f-display absolute left-[40%] top-72 leading-relaxed">
+		Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North
+		Carolina, USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript,
+		React, .NET, and Node.js.
+	</p>
+</section>
 
 <style>
 	.img-container {
