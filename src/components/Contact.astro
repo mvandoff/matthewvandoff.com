@@ -1,29 +1,46 @@
+<section id="section" class="pt-[15dvh] md:pt-[25dvh] snap-start h-[100dvh] bg-[#80734F] -mx-[100vw]">
+	<div class="w-[100vw] mx-auto pl-8 md:pl-32 lg:pl-48 mt-48">
+		<div class="flex flex-col items-start">
+			<div class="flex gap-4 lg:gap-5 items-center relative">
+				<span class="t-md f-display">Want to connect?</span>
+				<span class="f-hand text-xl md:text-2xl lg:text-3xl -rotate-3 lg:block hidden">(Click to copy)</span>
+				<span class="f-hand text-xl md:text-2xl lg:text-3xl -rotate-3 hidden md:block lg:hidden"
+					>(Touch to copy)</span
+				>
+				<span class="f-hand text-xl md:text-2xl lg:text-3xl -rotate-3 md:hidden absolute top-10 left-28 w-max"
+					>(Touch to copy)</span
+				>
+			</div>
+			<button id="copy-button" class="t-lg f-display text-left"
+				>hello@<br class="md:hidden" />matthewvandoff.com</button
+			>
+		</div>
+		<div class="flex flex-col mt-12">
+			<span class="t-md f-display">Or find me on:</span>
+			<a class="t-lg f-display" href="https://www.linkedin.com/in/matthew-vandoff" target="_blank">LinkedIn</a>
+			<a class="t-lg f-display" href="https://github.com/mvandoff" target="_blank">GitHub</a>
+		</div>
+	</div>
+</section>
+
 <script>
 	const ele = document.getElementById('section');
 	if (ele) ele.scrollIntoView();
+
+	const copyButton = document.getElementById('copy-button');
+
+	copyButton?.addEventListener('click', () => {
+		const textToCopy = 'hello@matthewvandoff.com';
+
+		navigator.clipboard
+			.writeText(textToCopy)
+			.then(() => {
+				console.log('Text copied to clipboard');
+				// Optionally, you can show a visual feedback to the user
+				// to indicate that the text has been copied
+			})
+			.catch((error) => {
+				console.error('Failed to copy text: ', error);
+			});
+	});
 </script>
-
-<>
-	<section id="section" class="pt-[15dvh] md:pt-[25dvh] snap-start h-[100dvh] bg-[#80734F] -mx-[100vw]">
-		<div class="w-[100vw] mx-auto pl-8 md:pl-32 lg:pl-48 mt-48">
-			<div class="flex flex-col items-start">
-				<span class="t-md f-display">Want to connect?</span>
-				<button class="t-lg f-display text-left">hello@<wbr />matthewvandoff.com</button>
-			</div>
-			<div class="flex flex-col mt-12">
-				<span class="t-md f-display">Or find me on:</span>
-				<a class="t-lg f-display" href="https://www.linkedin.com/in/matthew-vandoff" target="_blank">LinkedIn</a
-				>
-				<a class="t-lg f-display" href="https://github.com/mvandoff" target="_blank">GitHub</a>
-			</div>
-		</div>
-	</section>
-</>
-
-<style>
-	section {
-		/* display: flex;
-		justify-content: center;
-		align-items: center; */
-	}
-</style>

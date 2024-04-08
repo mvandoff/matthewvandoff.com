@@ -1,5 +1,8 @@
 ---
+import colors from 'tailwindcss/colors';
+
 const bg = '#15132A';
+const indigo300 = colors.indigo[300];
 ---
 
 <!doctype html>
@@ -9,7 +12,13 @@ const bg = '#15132A';
 		<meta name="description" content="Porfolio and landing page of full-stack developer, Matthew Van Doff." />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 		<link rel="stylesheet" href="https://use.typekit.net/rbu2ifw.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+
 		<meta name="generator" content={Astro.generator} />
 		<title>Matthew Van Doff: Full-Stack Developer</title>
 	</head>
@@ -20,7 +29,7 @@ const bg = '#15132A';
 		</div>
 	</body>
 
-	<style is:global define:vars={{ bg }}>
+	<style is:global define:vars={{ bg, indigo300 }}>
 		html,
 		body {
 			margin: 0;
@@ -68,6 +77,11 @@ const bg = '#15132A';
 		.f-body {
 			font-family: neue-haas-unica, sans-serif;
 			font-weight: 400;
+			font-style: normal;
+		}
+		.f-hand {
+			font-family: 'Caveat', cursive;
+			font-weight: 700;
 			font-style: normal;
 		}
 		.t-lg {
@@ -119,17 +133,7 @@ const bg = '#15132A';
 		}
 		/* Scrollbar styles */
 		body {
-			/* scrollbar-width: ; */
 			scrollbar-color: #1e1b4b transparent;
-		}
-
-		::-webkit-scrollbar-track {
-			background: transparent;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background: #1e1b4b;
-			border-radius: 6px;
 		}
 
 		/* Auto-hide scrollbar when inactive */
@@ -145,6 +149,16 @@ const bg = '#15132A';
 		/* Hide scrollbar track when inactive */
 		::-webkit-scrollbar-track-piece {
 			background: transparent;
+		}
+
+		a {
+			width: fit-content;
+		}
+
+		a:hover,
+		button:hover {
+			color: var(--indigo300);
+			transition: color 0.1s;
 		}
 	</style>
 </html>
