@@ -1,23 +1,30 @@
-<section id="section" class="pt-[15dvh] md:pt-[25dvh] snap-start h-[100dvh] bg-[#80734F] -mx-[100vw]">
-	<div class="w-[100vw] mx-auto pl-8 md:pl-32 lg:pl-48 mt-48">
+<section id="section" class="-mx-[100vw] h-[100dvh] snap-start bg-[#80734F] pt-[15dvh] md:pt-[25dvh]">
+	<div class="mx-auto mt-48 w-[100vw] pl-8 md:pl-32 lg:pl-48">
 		<div class="flex flex-col items-start">
-			<div class="flex gap-4 lg:gap-5 items-center relative">
+			<div class="relative flex items-center gap-4 lg:gap-5">
 				<span class="t-md f-display">Want to connect?</span>
-				<span class="f-hand text-xl md:text-2xl lg:text-3xl -rotate-3 lg:block hidden">(Click to copy)</span>
-				<span class="f-hand text-xl md:text-2xl lg:text-3xl -rotate-3 hidden md:block lg:hidden"
-					>(Touch to copy)</span
-				>
-				<span class="f-hand text-xl md:text-2xl lg:text-3xl -rotate-3 md:hidden absolute top-10 left-28 w-max"
-					>(Touch to copy)</span
-				>
+				<div id="copy-msg">
+					<span class="f-hand hidden -rotate-3 text-xl md:text-2xl lg:block lg:text-3xl">(Click to copy)</span>
+					<span class="f-hand hidden -rotate-3 text-xl md:block md:text-2xl lg:hidden lg:text-3xl">(Touch to copy)</span
+					>
+					<span class="f-hand absolute left-28 top-10 w-max -rotate-3 text-xl md:hidden md:text-2xl lg:text-3xl"
+						>(Touch to copy)</span
+					>
+				</div>
+				<div id="copy-success" class="hidden">
+					<span class="f-hand hidden -rotate-3 text-xl md:text-2xl lg:block lg:text-3xl">Copied!</span>
+					<span class="f-hand hidden -rotate-3 text-xl md:block md:text-2xl lg:hidden lg:text-3xl">Copied!</span>
+					<span class="f-hand absolute left-28 top-10 w-max -rotate-3 text-xl md:hidden md:text-2xl lg:text-3xl"
+						>Copied!</span
+					>
+				</div>
 			</div>
-			<button id="copy-button" class="t-lg f-display text-left"
-				>hello@<br class="md:hidden" />matthewvandoff.com</button
+			<button id="copy-button" class="t-lg f-display text-left">hello@<br class="md:hidden" />matthewvandoff.com</button
 			>
 		</div>
-		<div class="flex flex-col mt-12">
+		<div class="mt-12 flex flex-col">
 			<span class="t-md f-display">Or find me on:</span>
-			<a class="t-lg f-display" href="https://www.linkedin.com/in/matthew-vandoff" target="_blank">LinkedIn</a>
+			<a class="f-display t-lg" href="https://www.linkedin.com/in/matthew-vandoff" target="_blank">LinkedIn</a>
 			<a class="t-lg f-display" href="https://github.com/mvandoff" target="_blank">GitHub</a>
 		</div>
 	</div>
@@ -28,6 +35,8 @@
 	if (ele) ele.scrollIntoView();
 
 	const copyButton = document.getElementById('copy-button');
+	const copyMsg = document.getElementById('copy-msg');
+	const copySuccess = document.getElementById('copy-success');
 
 	copyButton?.addEventListener('click', () => {
 		const textToCopy = 'hello@matthewvandoff.com';
@@ -35,9 +44,8 @@
 		navigator.clipboard
 			.writeText(textToCopy)
 			.then(() => {
-				console.log('Text copied to clipboard');
-				// Optionally, you can show a visual feedback to the user
-				// to indicate that the text has been copied
+				copyMsg?.classList.add('hidden');
+				copySuccess?.classList.remove('hidden');
 			})
 			.catch((error) => {
 				console.error('Failed to copy text: ', error);

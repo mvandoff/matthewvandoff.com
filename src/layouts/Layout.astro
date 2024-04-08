@@ -24,7 +24,7 @@ const indigo300 = colors.indigo[300];
 	</head>
 
 	<body>
-		<div class="content-wrapper">
+		<div id="content-wrapper">
 			<slot />
 		</div>
 	</body>
@@ -49,7 +49,7 @@ const indigo300 = colors.indigo[300];
 			text-rendering: optimizeLegibility;
 		}
 
-		.content-wrapper {
+		#content-wrapper {
 			@media screen and (min-width: 768px) {
 				padding: 48px;
 			}
@@ -58,13 +58,13 @@ const indigo300 = colors.indigo[300];
 			}
 		}
 
-		.content-wrapper,
+		#content-wrapper,
 		.nav {
 			max-width: 1600px;
 			margin: 0 auto;
 		}
 
-		.content-wrapper,
+		#content-wrapper,
 		.nav {
 			max-width: 1600px;
 			margin: 0 auto;
@@ -153,6 +153,7 @@ const indigo300 = colors.indigo[300];
 
 		a {
 			width: fit-content;
+			margin: 0;
 		}
 
 		a:hover,

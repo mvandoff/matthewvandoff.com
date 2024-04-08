@@ -6,8 +6,8 @@ import me from '../assets/images/me.webp';
 
 <div class="relative">
 	<NameBar />
-	<section class="h-[100dvh] pt-[20dvh] md:pt-[25vh] snap-start">
-		<h1 class="t-lg f-display w-[241px] md:w-[468px] lg:w-[630px] ml-auto md:mx-auto text-right pt-16">
+	<section class="h-[100dvh] snap-start pt-[20dvh] md:pt-[25vh]">
+		<h1 class="t-lg f-display ml-auto w-[241px] pt-16 text-right md:mx-auto md:w-[468px] lg:w-[630px]">
 			<span class="text-indigo-300">I am</span>
 			a full-stack software engineer building
 			<span class="text-indigo-300">user focused</span> digital solutions that
@@ -20,11 +20,12 @@ import me from '../assets/images/me.webp';
 			<Image src={me} alt="portrait" class="rounded-lg" loading="eager" />
 		</div>
 		<h2
-			class="w-[234px] md:w-[441px] lg:w-[574px] t-md f-display absolute left-[30%] md:left-[40%] top-52 md:top-72 lg:top-80 leading-loose"
+			class="t-md f-display absolute left-[30%] top-52 w-[234px] leading-loose
+			md:left-[40%] md:top-72 md:w-[441px] lg:top-[30rem] lg:w-[574px]"
 		>
-			Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North
-			Carolina, USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript,
-			React, .NET, and Node.js.
+			Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North Carolina,
+			USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript, React, .NET,
+			and Node.js.
 		</h2>
 	</section>
 </div>

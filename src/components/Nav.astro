@@ -2,12 +2,43 @@
 import EvaDiagonalArrowRightUpFill from '~icons/eva/diagonal-arrow-right-up-fill';
 ---
 
-<nav class="flex justify-between fixed left-0 right-0 px-[32px] md:px-[48px] z-50 nav">
-	<button>
-		<img src="/logo.svg" class="w-[103px] h-[32px] md:w-[142px] md:h-[44px]" alt="logo" />
+<nav class="nav fixed left-0 right-0 z-50 flex justify-between px-[32px] md:px-[48px]">
+	<button id="logo-btn">
+		<img src="/logo.svg" class="h-[32px] w-[103px] md:h-[44px] md:w-[142px]" alt="logo" />
 	</button>
-	<button class="flex gap-2 justify-between items-center">
+	<button id="contact-btn" class="group flex items-center justify-between gap-2">
 		<span class="t-md f-display">Reach Out</span>
-		<EvaDiagonalArrowRightUpFill class="w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14" />
+		<EvaDiagonalArrowRightUpFill
+			class="h-8 w-8 transition-transform duration-300 group-hover:rotate-[180deg] md:h-10 md:w-10 lg:h-12 lg:w-12"
+		/>
 	</button>
 </nav>
+
+<script>
+	const logoBtn = document.getElementById('logo-btn');
+	const body = document.getElementsByTagName('body')[0];
+
+	logoBtn?.addEventListener('click', () => {
+		body?.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	});
+
+	const contactBtn = document.getElementById('contact-btn');
+	contactBtn?.addEventListener('click', () => {
+		body?.scrollTo({
+			top: body.scrollHeight,
+			behavior: 'smooth',
+		});
+	});
+</script>
+
+<style>
+	img {
+		transition: transform 0.2s;
+	}
+	img:hover {
+		transform: scale(1.1);
+	}
+</style>
