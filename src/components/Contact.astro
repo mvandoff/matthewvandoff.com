@@ -1,7 +1,10 @@
-<section id="section" class="-mx-[100vw] h-[100dvh] snap-start bg-[#80734F] pt-[15dvh] md:pt-[25dvh]">
-	<div class="mx-auto mt-48 w-[100vw] pl-8 md:pl-32 lg:pl-48">
+<section
+	id="target"
+	class="relative flex h-[100dvh] min-h-[100dvh] snap-start flex-col justify-end overflow-y-clip bg-[#80734F] pb-32"
+>
+	<div class="md:pl-20 lg:pl-24">
 		<div class="flex flex-col items-start">
-			<div class="relative flex items-center gap-4 lg:gap-5">
+			<div class="relative flex items-center lg:gap-5">
 				<span class="t-md f-display">Want to connect?</span>
 				<div id="copy-msg">
 					<span class="f-hand hidden -rotate-3 text-xl md:text-2xl lg:block lg:text-3xl">(Click to copy)</span>
@@ -22,18 +25,17 @@
 			<button id="copy-button" class="t-lg f-display text-left">hello@<br class="md:hidden" />matthewvandoff.com</button
 			>
 		</div>
-		<div class="mt-12 flex flex-col">
+		<div class="mt-6 flex flex-col">
 			<span class="t-md f-display">Or find me on:</span>
 			<a class="f-display t-lg" href="https://www.linkedin.com/in/matthew-vandoff" target="_blank">LinkedIn</a>
 			<a class="t-lg f-display" href="https://github.com/mvandoff" target="_blank">GitHub</a>
 		</div>
 	</div>
+
+	<span class="f-hand t-body absolute bottom-10 right-[5vw]">© 2024 Matthew Van Doff </span>
 </section>
 
 <script>
-	const ele = document.getElementById('section');
-	if (ele) ele.scrollIntoView();
-
 	const copyButton = document.getElementById('copy-button');
 	const copyMsg = document.getElementById('copy-msg');
 	const copySuccess = document.getElementById('copy-success');

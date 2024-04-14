@@ -1,23 +1,14 @@
-<section class="mb-24 min-h-[100dvh] snap-start pb-[40dvh] pt-[15dvh] md:mb-8 md:pb-0 md:pt-[20vh] lg:mb-0">
-	<div class="flex gap-3 md:gap-10 lg:gap-10">
-		<h3 class="t-lg f-display sticky top-[100px] -ml-6 mb-auto md:-ml-4">
+---
+import AboutMeBodyText from './AboutMeBodyText.astro';
+---
+
+<section class="relative mb-48 hidden min-h-[100dvh] snap-start overflow-y-clip pt-[16dvh] md:block">
+	<div class="flex justify-center md:gap-6 lg:gap-6">
+		<h3 class="t-lg f-display top-[160px] mb-auto !hidden min-w-[80px] md:sticky md:-ml-4 md:!block">
 			<span class="text-indigo-300">About</span> Me
 		</h3>
-		<div class="t-body f-body md:w-[400px] lg:w-[659px]">
-			<p>
-				My journey into programming started in 2015 when a college friend handed me a Python development book. Little
-				did he know that he would spark a lifetime of continuous learning and endless creation. Since then, I've had the
-				privilege of working on a diverse range of projects spanning from established software development firms to
-				cutting edge startups. I also built and maintain my own SaaS product that helps music makers improve their
-				quality of life
-			</p>
-			<br />
-			<p>
-				Currently I am working as a freelance developer. My main focus is set on helping innovators and creators bring
-				their vision to life through developing elegant, fast, and efficient web applications. My approach is rooted in
-				a strong focus on user experience, coupled with a keen attention to detail in understanding and executing the
-				client's vision.
-			</p>
+		<div class="t-body f-body flex flex-col gap-3 md:w-[700px] md:min-w-[700px]">
+			<AboutMeBodyText />
 		</div>
 	</div>
 </section>
@@ -29,3 +20,8 @@
 		display: inline;
 	}
 </style>
+
+<script>
+	// const ele = document.getElementById('target');
+	// if (ele) ele.scrollIntoView({});
+</script>
