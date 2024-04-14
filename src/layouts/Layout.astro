@@ -3,6 +3,7 @@ import colors from 'tailwindcss/colors';
 
 const bg = '#15132A';
 const indigo300 = colors.indigo[300];
+const altBg = '#80734F';
 ---
 
 <!doctype html>
@@ -29,7 +30,7 @@ const indigo300 = colors.indigo[300];
 		</div>
 	</body>
 
-	<style is:global define:vars={{ bg, indigo300 }}>
+	<style is:global define:vars={{ bg, indigo300, altBg }}>
 		html,
 		body {
 			margin: 0;
@@ -47,6 +48,11 @@ const indigo300 = colors.indigo[300];
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			text-rendering: optimizeLegibility;
+			transition: background 750ms;
+		}
+
+		.end {
+			background: var(--altBg) !important;
 		}
 
 		#content-wrapper {

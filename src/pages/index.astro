@@ -4,7 +4,6 @@ import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import AboutMe from '../components/AboutMe.astro';
 import Contact from '../components/Contact.astro';
-import CompSvg from '../assets/images/CompSvg.astro';
 import AboutMeMobile from '../components/AboutMeMobile.astro';
 ---
 
@@ -17,3 +16,29 @@ import AboutMeMobile from '../components/AboutMeMobile.astro';
 		<Contact />
 	</main>
 </Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const target = document.getElementById('contact');
+		const html = document.querySelector('html');
+		if (!target || !html) return;
+
+		const observer = new IntersectionObserver(
+			(entries, observer) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						html.classList.add('end');
+					} else {
+						html.classList.remove('end');
+					}
+				});
+			},
+			{
+				root: null, // observes entries relative to the viewport
+				threshold: 0.5, // trigger when 50% of 'contact' is visible
+			},
+		);
+
+		observer.observe(target); // Start observing the 'contact' element
+	});
+</script>
