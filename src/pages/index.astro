@@ -18,27 +18,14 @@ import AboutMeMobile from '../components/AboutMeMobile.astro';
 </Layout>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-		const target = document.getElementById('contact');
-		const html = document.querySelector('html');
-		if (!target || !html) return;
+	import colorSwap from '../scripts/colorSwap';
 
-		const observer = new IntersectionObserver(
-			(entries, observer) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						html.classList.add('end');
-					} else {
-						html.classList.remove('end');
-					}
-				});
-			},
-			{
-				root: null, // observes entries relative to the viewport
-				threshold: 0.5, // trigger when 50% of 'contact' is visible
-			},
-		);
+	document.addEventListener('DOMContentLoaded', async function () {
+		if (window.location.hostname === 'localhost') {
+			const preserveScroll = await import('../scripts/preserveScroll');
+			preserveScroll.default();
+		}
 
-		observer.observe(target); // Start observing the 'contact' element
+		colorSwap();
 	});
 </script>
