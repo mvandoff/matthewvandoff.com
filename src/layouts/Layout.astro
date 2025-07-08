@@ -32,7 +32,6 @@ const altBg = '#80734F';
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-
 		gtag('config', 'G-2J3FESJMHC');
 	</script>
 
@@ -43,6 +42,11 @@ const altBg = '#80734F';
 	</body>
 
 	<style is:global define:vars={{ bg, indigo300, altBg }}>
+		:root {
+			--indigo-200: oklch(87% 0.065 274.039);
+			--indigo-300: oklch(78.5% 0.115 274.713);
+			--indigo-400: oklch(67.3% 0.182 276.935);
+		}
 		html,
 		body {
 			margin: 0;

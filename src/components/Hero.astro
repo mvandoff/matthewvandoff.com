@@ -9,24 +9,70 @@ import me from '../assets/images/me.webp';
 
 	<section class="flex h-[100dvh] snap-start items-center pb-[8vh]">
 		<h1 class="t-lg f-display z-10 ml-auto w-[241px] pt-16 text-left md:mx-auto md:w-[468px] lg:w-[630px]">
-			<span class="text-indigo-300">I am</span>
-			a full-stack software engineer building
-			<span class="text-indigo-300">user focused</span> digital solutions that
-			<span class="italic text-indigo-300">feel good.</span>
+			<span class="text-indigo-300">
+				<span class="hero-word">I</span>
+				<span class="hero-word">am</span>
+			</span>
+			<span class="hero-word">a</span>
+			<span class="hero-word">full-stack</span>
+			<span class="hero-word">software</span>
+			<span class="hero-word">engineer</span>
+			<span class="hero-word">building</span>
+			<span class="text-indigo-300">
+				<span class="hero-word">user</span>
+				<span class="hero-word">focused</span>
+			</span>
+			<span class="hero-word">digital</span>
+			<span class="hero-word">solutions</span>
+			<span class="hero-word">that</span>
+			<span class="italic text-indigo-300">
+				<span class="hero-word">feel</span>
+				<span class="hero-word">good.</span>
+			</span>
 		</h1>
 	</section>
 
 	<section class="relative flex h-[100vh] snap-start items-center">
-		<div class="img-container rounded-lg">
+		<div class="img-container animated-border-box rounded-lg">
 			<Image src={me} alt="portrait" class="rounded-lg" loading="eager" />
 		</div>
 		<h2
 			class="t-md f-display absolute right-0 mt-[15dvh] w-[234px]
-			leading-relaxed md:left-[40%] md:w-[441px] lg:w-[574px]"
+  leading-relaxed md:left-[40%] md:w-[441px] lg:w-[574px]"
 		>
-			Hello! My name is <span class="text-indigo-300">Matthew.</span> I'm a software developer based in Raleigh, North Carolina,
-			USA. I specialize in creating performant, scalable web applications using modern tools like TypeScript, React, .NET,
-			and Node.js.
+			<span class="hero-word">Hello</span>
+			<span class="hero-word">👋,</span>
+			<span class="hero-word">my</span>
+			<span class="hero-word">name</span>
+			<span class="hero-word">is</span>
+			<span class="text-indigo-300"><span class="hero-word">Matthew.</span></span>
+			<span class="hero-word">I'm</span>
+			<span class="hero-word">a</span>
+			<span class="hero-word">software</span>
+			<span class="hero-word">developer</span>
+			<span class="hero-word">based</span>
+			<span class="hero-word">in</span>
+			<span class="hero-word">Raleigh,</span>
+			<span class="hero-word">North</span>
+			<span class="hero-word">Carolina,</span>
+			<span class="hero-word">USA.</span>
+			<span class="hero-word">I</span>
+			<span class="hero-word">specialize</span>
+			<span class="hero-word">in</span>
+			<span class="hero-word">creating</span>
+			<span class="hero-word">performant,</span>
+			<span class="hero-word">scalable</span>
+			<span class="hero-word">web</span>
+			<span class="hero-word">applications</span>
+			<span class="hero-word">using</span>
+			<span class="hero-word">modern</span>
+			<span class="hero-word">tools</span>
+			<span class="hero-word">like</span>
+			<span class="hero-word">TypeScript,</span>
+			<span class="hero-word">React,</span>
+			<span class="hero-word">.NET,</span>
+			<span class="hero-word">and</span>
+			<span class="hero-word">Node.js.</span>
 		</h2>
 	</section>
 </div>
@@ -60,5 +106,17 @@ import me from '../assets/images/me.webp';
 			object-fit: cover;
 			object-position: 2rem;
 		}
+	}
+	h1,
+	h2 {
+		cursor: default;
+	}
+	.text-indigo-300 {
+		.hero-word:hover {
+			color: var(--indigo-400);
+		}
+	}
+	.hero-word:hover {
+		color: var(--indigo-300);
 	}
 </style>
